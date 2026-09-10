@@ -2,7 +2,7 @@ PYTHON ?= python
 CSV ?= twcs.csv
 PREDICTIONS ?= results/development_predictions.csv
 
-.PHONY: install prepare validate validate-development evaluate evaluate-development evaluate-live audit judge agreement reproduce test demo
+.PHONY: install prepare review-labels-gemini validate validate-development evaluate evaluate-development evaluate-live audit judge agreement reproduce test demo
 
 install:
 	$(PYTHON) -m pip install -r requirements.txt
@@ -10,6 +10,9 @@ install:
 
 prepare:
 	$(PYTHON) -m hiver_support.cli prepare --csv "$(CSV)"
+
+review-labels-gemini:
+	$(PYTHON) scripts/review_gold_with_gemini.py
 
 validate:
 	$(PYTHON) -m hiver_support.cli validate
@@ -24,7 +27,7 @@ evaluate-development:
 	$(PYTHON) -m hiver_support.cli evaluate --allow-draft-labels --predictions results/development_predictions.csv --metrics results/development_metrics.json
 
 evaluate-live:
-	$(PYTHON) -m hiver_support.cli evaluate --with-gemini --acknowledge-external-data --predictions results/live_predictions.csv --metrics results/live_metrics.json
+	$(PYTHON) -m hiver_support.cli evaluate --allow-draft-labels --with-gemini --acknowledge-external-data --predictions results/live_predictions.csv --metrics results/live_metrics.json
 
 audit:
 	$(PYTHON) -m hiver_support.cli make-audit --predictions "$(PREDICTIONS)"

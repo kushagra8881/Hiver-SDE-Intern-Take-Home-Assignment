@@ -56,7 +56,11 @@ def validate_gold(
     if unreviewed and require_human_review:
         errors.append(f"{unreviewed} rows are not marked reviewed")
     elif unreviewed:
-        warnings.append(f"DEVELOPMENT ONLY: {unreviewed} rows are not human-reviewed")
+        llm_reviewed = int(gold["review_status"].astype(str).str.lower().eq("llm_reviewed").sum())
+        warnings.append(
+            f"DEVELOPMENT ONLY: {unreviewed} rows are not human-reviewed"
+            + (f" ({llm_reviewed} independently LLM-reviewed)" if llm_reviewed else "")
+        )
     if gold["annotator"].astype(str).str.strip().eq("").any():
         errors.append("Every row needs an annotator")
     if pairs is not None:

@@ -83,7 +83,14 @@ def command_evaluate(args: argparse.Namespace) -> None:
         gemini_client=gemini,
         allow_unreviewed=args.allow_draft_labels,
     )
-    predictions["label_provenance"] = "assistant_draft" if args.allow_draft_labels else "human_reviewed"
+    statuses = set(gold["review_status"].astype(str).str.lower())
+    if not args.allow_draft_labels:
+        provenance = "human_reviewed"
+    elif statuses == {"llm_reviewed"}:
+        provenance = "llm_reviewed"
+    else:
+        provenance = "assistant_draft"
+    predictions["label_provenance"] = provenance
     Path(args.predictions).parent.mkdir(parents=True, exist_ok=True)
     predictions.to_csv(args.predictions, index=False)
     metrics = score_predictions(gold, predictions, seed=settings.random_seed)

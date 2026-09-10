@@ -114,7 +114,7 @@ def judge_predictions(
     key = api_key or os.getenv("GEMINI_API_KEY")
     if not key:
         raise RuntimeError("GEMINI_API_KEY is not set")
-    model = model or os.getenv("GEMINI_JUDGE_MODEL", "gemini-2.5-flash")
+    model = model or os.getenv("GEMINI_JUDGE_MODEL", "gemini-3.5-flash-lite")
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
     rows: list[dict[str, Any]] = []
     for item in audit.to_dict("records"):
