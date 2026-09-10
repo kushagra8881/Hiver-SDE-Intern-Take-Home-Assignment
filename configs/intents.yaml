@@ -1,0 +1,36 @@
+version: 1.0.0
+labelling_rule: Choose the single intent that best describes the customer's immediate support need; use secondary_intent only for a genuinely separate need.
+intents:
+  account_access:
+    definition: Login, password, Facebook sign-in, account compromise, duplicate or inaccessible account.
+    include: ["cannot log in", "password reset failed", "account appears hacked"]
+    exclude: ["Premium disappeared after a charge -> billing_subscription", "app opens but playback fails -> playback_technical"]
+  billing_subscription:
+    definition: Payments, charges, refunds, cancellation, Premium status, trials and plan eligibility.
+    include: ["charged twice", "student discount", "lost Premium", "cancel subscription"]
+    exclude: ["login only -> account_access", "Premium playback bug -> playback_technical"]
+  playback_technical:
+    definition: Playback, download/offline, audio, crashes, errors, slowness, app or web-player stability.
+    include: ["song stops after ten seconds", "web player fails", "offline downloads missing"]
+    exclude: ["speaker cannot be discovered -> device_connectivity", "song absent from catalog -> content_catalog"]
+  playlist_library:
+    definition: Playlists, saved/liked songs, queue, shuffle, mixes and personal-library organisation or sync.
+    include: ["playlist vanished", "queue order", "songs will not save"]
+    exclude: ["all audio will not play -> playback_technical", "album missing for everyone -> content_catalog"]
+  device_connectivity:
+    definition: Casting, speakers, consoles, cars, Bluetooth, device discovery and cross-device control.
+    include: ["Chromecast not listed", "Sonos connection", "car integration"]
+    exclude: ["generic app crash on phone -> playback_technical"]
+  content_catalog:
+    definition: Missing or incorrect artists, albums, songs, podcasts, metadata, availability, lyrics and local files.
+    include: ["album assigned to wrong artist", "track unavailable", "incorrect metadata"]
+    exclude: ["saved copy vanished only from my library -> playlist_library"]
+  product_feedback:
+    definition: Feature requests, UI/ads/recommendation feedback and non-actionable product complaints.
+    include: ["please add feature", "new design feedback", "recommendations are poor"]
+    exclude: ["specific broken behavior -> relevant technical intent"]
+  other:
+    definition: Greetings, praise, acknowledgements, unclear follow-ups, business/artist requests and rare out-of-scope needs.
+    include: ["thanks", "both", "partnership request", "unclear screenshot-only tweet"]
+    exclude: ["any substantive support problem with a defined label"]
+

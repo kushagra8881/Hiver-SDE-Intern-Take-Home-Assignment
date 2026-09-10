@@ -1,0 +1,9 @@
+tweet_id,author_id,inbound,created_at,text,response_tweet_id,in_response_to_tweet_id
+1,1001,True,Tue Oct 31 10:00:00 +0000 2017,@SpotifyCares songs won't play,"2,7",
+2,SpotifyCares,False,Tue Oct 31 10:01:00 +0000 2017,@1001 "1: Which device are you using? /AB",3,1
+3,1001,True,Tue Oct 31 10:02:00 +0000 2017,@SpotifyCares Android and it is still broken,4,2
+4,SpotifyCares,False,Tue Oct 31 10:03:00 +0000 2017,@1001 Please try restarting the app. /CD,,3
+5,2002,True,Tue Oct 31 11:00:00 +0000 2017,@OtherBrand hello,6,
+6,OtherBrand,False,Tue Oct 31 11:01:00 +0000 2017,@2002 Hi there!,,5
+7,SpotifyCares,False,Tue Oct 31 10:01:01 +0000 2017,@1001 "2: Does it work on the web player? /AB",,1
+

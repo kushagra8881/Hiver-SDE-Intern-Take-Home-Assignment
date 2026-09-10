@@ -1,0 +1,25 @@
+{
+  "source_file": "twcs.csv",
+  "source_sha256": "cd297fcfa1bf6f99938be242e8e578980bc6d1b96adc8691abec9a39175b03c0",
+  "brand": "SpotifyCares",
+  "preprocessing_version": "1.0.0",
+  "rows": 41585,
+  "conversation_count": 30265,
+  "fingerprint_count": 39861,
+  "columns": [
+    "pair_id",
+    "conversation_id",
+    "created_at",
+    "message",
+    "context",
+    "historical_reply",
+    "reply_tweet_ids",
+    "text_fingerprint",
+    "weak_intent",
+    "weak_intent_confidence",
+    "weak_ambiguity",
+    "weak_risk",
+    "weak_risk_reason",
+    "reply_quality"
+  ]
+}

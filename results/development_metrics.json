@@ -1,0 +1,324 @@
+{
+  "challenge_test_cases": 23,
+  "representative_test_cases": 77,
+  "systems": {
+    "main": {
+      "auto_coverage": 0.2,
+      "by_stratum": {
+        "challenge": {
+          "auto_coverage": 0.1739,
+          "cases": 23,
+          "escalation_recall": 1.0,
+          "intent_accuracy": 0.6957,
+          "intent_macro_f1": 0.4641,
+          "unsafe_auto_rate": 0.0
+        },
+        "representative": {
+          "auto_coverage": 0.2078,
+          "cases": 77,
+          "escalation_recall": 1.0,
+          "intent_accuracy": 0.6883,
+          "intent_macro_f1": 0.6325,
+          "unsafe_auto_rate": 0.0
+        }
+      },
+      "escalation_f1": 0.8811,
+      "escalation_precision": 0.7875,
+      "escalation_recall": 1.0,
+      "intent_accuracy": 0.69,
+      "intent_accuracy_95ci": [
+        0.6,
+        0.78
+      ],
+      "intent_by_class": {
+        "account_access": {
+          "f1-score": 0.9230769230769231,
+          "precision": 1.0,
+          "recall": 0.8571428571428571,
+          "support": 14.0
+        },
+        "accuracy": 0.69,
+        "billing_subscription": {
+          "f1-score": 0.9,
+          "precision": 0.9473684210526315,
+          "recall": 0.8571428571428571,
+          "support": 21.0
+        },
+        "content_catalog": {
+          "f1-score": 0.42857142857142855,
+          "precision": 0.375,
+          "recall": 0.5,
+          "support": 6.0
+        },
+        "device_connectivity": {
+          "f1-score": 0.6666666666666666,
+          "precision": 1.0,
+          "recall": 0.5,
+          "support": 2.0
+        },
+        "macro avg": {
+          "f1-score": 0.6154858582277938,
+          "precision": 0.689427326762853,
+          "recall": 0.622955586080586,
+          "support": 100.0
+        },
+        "other": {
+          "f1-score": 0.7419354838709677,
+          "precision": 0.6216216216216216,
+          "recall": 0.92,
+          "support": 25.0
+        },
+        "playback_technical": {
+          "f1-score": 0.5,
+          "precision": 0.75,
+          "recall": 0.375,
+          "support": 16.0
+        },
+        "playlist_library": {
+          "f1-score": 0.36363636363636365,
+          "precision": 0.25,
+          "recall": 0.6666666666666666,
+          "support": 3.0
+        },
+        "product_feedback": {
+          "f1-score": 0.4,
+          "precision": 0.5714285714285714,
+          "recall": 0.3076923076923077,
+          "support": 13.0
+        },
+        "weighted avg": {
+          "f1-score": 0.6856713501552211,
+          "precision": 0.7386384881121723,
+          "recall": 0.69,
+          "support": 100.0
+        }
+      },
+      "intent_macro_f1": 0.6155,
+      "route_confusion_matrix": [
+        [
+          20,
+          17
+        ],
+        [
+          0,
+          63
+        ]
+      ],
+      "routing_threshold": 0.48,
+      "unsafe_auto_count": 0,
+      "unsafe_auto_rate": 0.0
+    },
+    "simple": {
+      "auto_coverage": 0.2,
+      "by_stratum": {
+        "challenge": {
+          "auto_coverage": 0.1739,
+          "cases": 23,
+          "escalation_recall": 1.0,
+          "intent_accuracy": 0.7391,
+          "intent_macro_f1": 0.4837,
+          "unsafe_auto_rate": 0.0
+        },
+        "representative": {
+          "auto_coverage": 0.2078,
+          "cases": 77,
+          "escalation_recall": 1.0,
+          "intent_accuracy": 0.6883,
+          "intent_macro_f1": 0.6217,
+          "unsafe_auto_rate": 0.0
+        }
+      },
+      "escalation_f1": 0.8811,
+      "escalation_precision": 0.7875,
+      "escalation_recall": 1.0,
+      "intent_accuracy": 0.7,
+      "intent_accuracy_95ci": [
+        0.6,
+        0.79
+      ],
+      "intent_by_class": {
+        "account_access": {
+          "f1-score": 0.9230769230769231,
+          "precision": 1.0,
+          "recall": 0.8571428571428571,
+          "support": 14.0
+        },
+        "accuracy": 0.7,
+        "billing_subscription": {
+          "f1-score": 0.9,
+          "precision": 0.9473684210526315,
+          "recall": 0.8571428571428571,
+          "support": 21.0
+        },
+        "content_catalog": {
+          "f1-score": 0.3333333333333333,
+          "precision": 0.3333333333333333,
+          "recall": 0.3333333333333333,
+          "support": 6.0
+        },
+        "device_connectivity": {
+          "f1-score": 0.6666666666666666,
+          "precision": 1.0,
+          "recall": 0.5,
+          "support": 2.0
+        },
+        "macro avg": {
+          "f1-score": 0.6123956897886165,
+          "precision": 0.7228853383458647,
+          "recall": 0.6121222527472527,
+          "support": 100.0
+        },
+        "other": {
+          "f1-score": 0.746268656716418,
+          "precision": 0.5952380952380952,
+          "recall": 1.0,
+          "support": 25.0
+        },
+        "playback_technical": {
+          "f1-score": 0.5217391304347826,
+          "precision": 0.8571428571428571,
+          "recall": 0.375,
+          "support": 16.0
+        },
+        "playlist_library": {
+          "f1-score": 0.36363636363636365,
+          "precision": 0.25,
+          "recall": 0.6666666666666666,
+          "support": 3.0
+        },
+        "product_feedback": {
+          "f1-score": 0.4444444444444444,
+          "precision": 0.8,
+          "recall": 0.3076923076923077,
+          "support": 13.0
+        },
+        "weighted avg": {
+          "f1-score": 0.6902963962996409,
+          "precision": 0.7763997493734336,
+          "recall": 0.7,
+          "support": 100.0
+        }
+      },
+      "intent_macro_f1": 0.6124,
+      "route_confusion_matrix": [
+        [
+          20,
+          17
+        ],
+        [
+          0,
+          63
+        ]
+      ],
+      "routing_threshold": 0.48,
+      "unsafe_auto_count": 0,
+      "unsafe_auto_rate": 0.0
+    },
+    "trivial": {
+      "auto_coverage": 0.0,
+      "by_stratum": {
+        "challenge": {
+          "auto_coverage": 0.0,
+          "cases": 23,
+          "escalation_recall": 1.0,
+          "intent_accuracy": 0.1739,
+          "intent_macro_f1": 0.037,
+          "unsafe_auto_rate": 0.0
+        },
+        "representative": {
+          "auto_coverage": 0.0,
+          "cases": 77,
+          "escalation_recall": 1.0,
+          "intent_accuracy": 0.2208,
+          "intent_macro_f1": 0.0452,
+          "unsafe_auto_rate": 0.0
+        }
+      },
+      "escalation_f1": 0.773,
+      "escalation_precision": 0.63,
+      "escalation_recall": 1.0,
+      "intent_accuracy": 0.21,
+      "intent_accuracy_95ci": [
+        0.13,
+        0.29
+      ],
+      "intent_by_class": {
+        "account_access": {
+          "f1-score": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 14.0
+        },
+        "accuracy": 0.21,
+        "billing_subscription": {
+          "f1-score": 0.34710743801652894,
+          "precision": 0.21,
+          "recall": 1.0,
+          "support": 21.0
+        },
+        "content_catalog": {
+          "f1-score": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 6.0
+        },
+        "device_connectivity": {
+          "f1-score": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 2.0
+        },
+        "macro avg": {
+          "f1-score": 0.04338842975206612,
+          "precision": 0.02625,
+          "recall": 0.125,
+          "support": 100.0
+        },
+        "other": {
+          "f1-score": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 25.0
+        },
+        "playback_technical": {
+          "f1-score": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 16.0
+        },
+        "playlist_library": {
+          "f1-score": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 3.0
+        },
+        "product_feedback": {
+          "f1-score": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 13.0
+        },
+        "weighted avg": {
+          "f1-score": 0.07289256198347108,
+          "precision": 0.0441,
+          "recall": 0.21,
+          "support": 100.0
+        }
+      },
+      "intent_macro_f1": 0.0434,
+      "route_confusion_matrix": [
+        [
+          0,
+          37
+        ],
+        [
+          0,
+          63
+        ]
+      ],
+      "unsafe_auto_count": 0,
+      "unsafe_auto_rate": 0.0
+    }
+  },
+  "test_cases": 100
+}

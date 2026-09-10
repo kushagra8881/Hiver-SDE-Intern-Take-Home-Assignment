@@ -1,0 +1,14 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+work/
+twcs.csv
+data/raw/
+data/processed/
+artifacts/*
+!artifacts/.gitkeep
+results/live_*.json
+results/live_*.csv
