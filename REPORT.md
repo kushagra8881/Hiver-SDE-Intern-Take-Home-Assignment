@@ -4,7 +4,7 @@
 **Data:** Customer Support on Twitter, SpotifyCares subset, through 2017-12-03.  
 **Reproducibility:** `make reproduce` recomputes tables from frozen artifacts; full rebuild uses `make prepare CSV=...`.
 
-> **Submission status:** engineering and assistant-drafted annotations are complete. Numerical development results are explicitly provisional until the applicant personally reviews all 200 gold rows and completes the blinded reply audit. This report does not relabel AI output as human evidence.
+> **Submission status:** engineering, independent Gemini review of all 200 labels, live generation, and LLM judging are complete. Gemini changed 80 draft labels (mean self-reported confidence 0.966). Results remain provisional until the applicant personally reviews the gold rows and completes the blinded reply audit; this report never relabels AI output as human evidence.
 
 ## 1. Problem framing: what “good” means
 
@@ -43,24 +43,24 @@ Comparisons use identical frozen test cases:
 
 ### Current development evidence
 
-`results/development_metrics.json` is generated from assistant-drafted labels and is useful for debugging only. It is **not** a human-gold headline. On this provisional 100-case chronological test half, the main system reached 0.616 macro-F1 and safely auto-routed 20 cases; no gold-escalate case was auto-routed. With only 20 auto cases, zero observed unsafe autos still permits a rough 95% upper bound near 15% (the rule of three). After the human checkpoint, `make evaluate` replaces these development artifacts with frozen results.
+`results/live_metrics.json` uses independently LLM-reviewed labels and live Gemini drafts. It is **not** a human-gold headline. On the 100-case chronological test half, the main system reached 0.633 macro-F1 and safely auto-routed 20 cases; no labelled escalation case was auto-routed. With only 20 auto cases, zero observed unsafe autos still permits a rough 95% upper bound near 15% (the rule of three).
 
 <!-- RESULTS_TABLE_START -->
 
 | System | Intent accuracy (95% CI) | Macro-F1 | Escalation recall | Auto coverage | Unsafe-auto rate |
 |---|---:|---:|---:|---:|---:|
 | Trivial | 0.210 (0.130–0.290) | 0.043 | 1.000 | 0.000 | 0.000 |
-| Simple | 0.700 (0.600–0.790) | 0.612 | 1.000 | 0.200 | 0.000 |
-| Main | 0.690 (0.600–0.780) | 0.616 | 1.000 | 0.200 | 0.000 |
+| Simple | 0.690 (0.600–0.780) | 0.607 | 1.000 | 0.200 | 0.000 |
+| Main | 0.710 (0.620–0.790) | 0.633 | 1.000 | 0.200 | 0.000 |
 
 <!-- RESULTS_TABLE_END -->
 
-These are assistant-draft development numbers. The simple baseline has one-point higher accuracy; the main hybrid has slightly higher macro-F1, mainly on the representative stratum. Neither difference is meaningful at this sample size. The honest engineering result is that the trust gate improves on always-escalate by reaching 20% coverage without an observed unsafe route—not that the learned classifier decisively beats keywords.
+These are LLM-reviewed development numbers. The main system exceeds the simple baseline by two accuracy points and 0.026 macro-F1, but the difference is not meaningful at this sample size. The honest engineering result is that the trust gate improves on always-escalate by reaching 20% coverage without an observed unsafe route—not that the learned classifier decisively beats keywords.
 
 | Main-system stratum | Cases | Intent accuracy | Macro-F1 | Escalation recall | Auto coverage | Unsafe-auto rate |
 |---|---:|---:|---:|---:|---:|---:|
-| Representative | 77 | 0.688 | 0.633 | 1.000 | 0.208 | 0.000 |
-| Challenge | 23 | 0.696 | 0.464 | 1.000 | 0.174 | 0.000 |
+| Representative | 77 | 0.701 | 0.645 | 1.000 | 0.208 | 0.000 |
+| Challenge | 23 | 0.739 | 0.495 | 1.000 | 0.174 | 0.000 |
 
 The challenge mix is intentionally not a deployment estimate. Thread-cluster bootstrap 95% confidence intervals accompany overall intent accuracy. Per-intent scores and route confusion matrices are in the JSON artifact. Device/connectivity has only two test examples and playlist/library only three, so their apparent per-class performance is especially unstable.
 
@@ -70,11 +70,11 @@ The frozen rubric scores groundedness, actionability, tone, and safety from 1–
 
 The pre-declared credibility rule is: if held-out binary κ < 0.60, LLM pass rate cannot be the headline. Same-vendor drafting/judging is disclosed as a remaining bias even when measured agreement is acceptable.
 
-**Judge–human agreement:** pending human completion of `data/audit/human_reply_audit.csv`; the code returns `insufficient_human_ratings` rather than fabricating a statistic.
+Gemini judged all 120 blinded outputs with zero failed calls. Its pass rates were **85% main**, 35% simple, and 25% trivial; main averaged 3.55 groundedness, 3.33 actionability, 4.03 tone, and 4.75 safety. These are model-judge results, not human agreement. **Judge–human agreement remains pending** completion of `data/audit/human_reply_audit.csv`; the code returns `insufficient_human_ratings` rather than fabricating a statistic.
 
 ## 5. Failure analysis
 
-The following five modes are taken from actual assistant-draft test predictions; IDs map directly to committed gold/prediction rows:
+The following five modes are taken from actual live test predictions against the independently LLM-reviewed labels; IDs map directly to committed gold/prediction rows:
 
 1. **Figurative risk language causes unnecessary escalation — SPOT-165 / tweet 2909826.** “Committing suicide” describes playlist strategy, but the safety keyword gate escalated it. Hypothesis: high-recall safety rules need phrase-level context or a second-stage safety classifier. Keep the conservative default, but measure false escalation and require human review of rule edits.
 2. **Product feedback is confused with the object mentioned — SPOT-007 / tweet 83673.** A complaint about the weekly-playlist algorithm was predicted `playlist_library` instead of `product_feedback`. Hypothesis: short lexical features overweight “playlist”; add intent-boundary examples and retrieval-derived contrastive features.

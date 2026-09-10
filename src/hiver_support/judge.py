@@ -116,8 +116,17 @@ def judge_predictions(
         raise RuntimeError("GEMINI_API_KEY is not set")
     model = model or os.getenv("GEMINI_JUDGE_MODEL", "gemini-3.5-flash-lite")
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
-    rows: list[dict[str, Any]] = []
-    for item in audit.to_dict("records"):
+    target = Path(output_path)
+    existing = pd.read_csv(target) if target.exists() and target.stat().st_size else pd.DataFrame()
+    if not existing.empty:
+        failure = existing["judge_critical_errors"].astype(str).str.contains("judge_failure", na=True)
+        completed_ids = set(existing.loc[~failure, "audit_id"].astype(str))
+        rows: list[dict[str, Any]] = existing.loc[~failure].to_dict("records")
+    else:
+        completed_ids = set()
+        rows = []
+    pending = [item for item in audit.to_dict("records") if str(item["audit_id"]) not in completed_ids]
+    for number, item in enumerate(pending, 1):
         prompt = _judge_prompt(pd.Series(item))
         payload = {
             "contents": [{"role": "user", "parts": [{"text": prompt}]}],
@@ -155,9 +164,14 @@ def judge_predictions(
                 "judge_rationale": parsed.get("rationale", parsed.get("error", "")),
             }
         )
+        # Checkpoint each result so interrupted or rate-limited runs are resumable.
+        target.parent.mkdir(parents=True, exist_ok=True)
+        pd.DataFrame(rows).drop_duplicates("audit_id", keep="last").to_csv(target, index=False)
+        if number % 10 == 0 or number == len(pending):
+            print(f"Judged {number}/{len(pending)} pending outputs", flush=True)
     result = pd.DataFrame(rows)
-    target = Path(output_path)
     target.parent.mkdir(parents=True, exist_ok=True)
+    result = result.drop_duplicates("audit_id", keep="last")
     result.to_csv(target, index=False)
     return result
 

@@ -1,6 +1,6 @@
 PYTHON ?= python
 CSV ?= twcs.csv
-PREDICTIONS ?= results/development_predictions.csv
+PREDICTIONS ?= results/live_predictions.csv
 
 .PHONY: install prepare review-labels-gemini validate validate-development evaluate evaluate-development evaluate-live audit judge agreement reproduce test demo
 

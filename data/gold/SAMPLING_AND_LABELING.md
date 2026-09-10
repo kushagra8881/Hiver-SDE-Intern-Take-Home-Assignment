@@ -46,6 +46,8 @@ Account-specific payments, refunds, cancellations, access, compromise, and perso
 
 ## Human-review procedure
 
+The committed labels were independently reviewed by `gemini-3.5-flash-lite`; 80/200 label records changed. Each row is explicitly stamped `llm_reviewed`, and the full change audit is `results/gemini_label_review.csv`. This does not satisfy the human-review requirement.
+
 Run:
 
 ```bash

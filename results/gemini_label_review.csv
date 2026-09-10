@@ -1,0 +1,201 @@
+gold_id,model,changed,confidence,old_intent,new_intent,old_should_escalate,new_should_escalate,review_note
+SPOT-001,gemini-3.5-flash-lite,True,1.0,content_catalog,content_catalog,false,false,Accurate intent and escalation settings.
+SPOT-002,gemini-3.5-flash-lite,True,1.0,product_feedback,account_access,true,true,Intent should be account_access due to social login/integration problem.
+SPOT-003,gemini-3.5-flash-lite,True,1.0,billing_subscription,billing_subscription,true,true,Correct billing intent and necessary billing escalation.
+SPOT-004,gemini-3.5-flash-lite,True,1.0,other,other,true,true,Appropriate escalation for existing support ticket follow-up.
+SPOT-005,gemini-3.5-flash-lite,True,1.0,content_catalog,content_catalog,false,false,Correct draft evaluation.
+SPOT-006,gemini-3.5-flash-lite,True,1.0,product_feedback,product_feedback,false,false,Correct product feedback classification.
+SPOT-007,gemini-3.5-flash-lite,True,1.0,product_feedback,product_feedback,false,false,Accurate review of recommendations feedback.
+SPOT-008,gemini-3.5-flash-lite,True,1.0,other,other,true,true,Correctly escalated due to missing context.
+SPOT-009,gemini-3.5-flash-lite,True,1.0,other,other,false,false,Correct evaluation for resolved praise/follow-up.
+SPOT-010,gemini-3.5-flash-lite,True,1.0,playback_technical,playback_technical,false,false,Correct intent and escalation logic for technical outage inquiry.
+SPOT-011,gemini-3.5-flash-lite,True,0.95,billing_subscription,billing_subscription,true,true,Accurate intent and escalation for account recovery and billing.
+SPOT-012,gemini-3.5-flash-lite,True,0.9,account_access,account_access,true,false,Correctly labeled as account access with no escalation required.
+SPOT-013,gemini-3.5-flash-lite,True,0.95,playback_technical,playback_technical,false,false,Solid technical troubleshooting label without escalation needed.
+SPOT-014,gemini-3.5-flash-lite,True,0.95,billing_subscription,billing_subscription,true,true,Family plan issue correctly routed to billing/subscription.
+SPOT-015,gemini-3.5-flash-lite,True,0.98,other,other,false,false,Appreciative feedback properly labeled as other.
+SPOT-016,gemini-3.5-flash-lite,True,0.95,product_feedback,product_feedback,false,false,Correct product feedback/availability classification.
+SPOT-017,gemini-3.5-flash-lite,True,0.9,billing_subscription,billing_subscription,true,true,Billing query regarding payment methods appropriately escalated.
+SPOT-018,gemini-3.5-flash-lite,True,0.95,product_feedback,product_feedback,false,false,Free tier ad complaint appropriately categorized as product feedback.
+SPOT-019,gemini-3.5-flash-lite,True,0.85,other,other,true,true,Ticketing/presale query correctly flagged with weak evidence escalation.
+SPOT-020,gemini-3.5-flash-lite,True,0.99,other,other,true,true,Vague request correctly flagged for missing context.
+SPOT-021,gemini-3.5-flash-lite,False,0.95,device_connectivity,device_connectivity,true,true,Draft assessment is accurate; handles recurring technical drops requiring human support.
+SPOT-022,gemini-3.5-flash-lite,False,0.98,device_connectivity,device_connectivity,false,false,Valid draft points addressing deprecated integration directly.
+SPOT-023,gemini-3.5-flash-lite,False,0.96,billing_subscription,billing_subscription,true,true,Correctly categorized as billing query with payment validation requiring private support.
+SPOT-024,gemini-3.5-flash-lite,False,0.95,device_connectivity,device_connectivity,false,false,Accurate assessment for cast connection delay bug.
+SPOT-025,gemini-3.5-flash-lite,False,0.97,content_catalog,content_catalog,true,true,Appropriate catalog metadata issue escalation.
+SPOT-026,gemini-3.5-flash-lite,False,0.96,playback_technical,playback_technical,false,false,Standard troubleshooting response without escalation.
+SPOT-027,gemini-3.5-flash-lite,False,0.97,billing_subscription,billing_subscription,true,true,Card failure issue appropriately routed to billing support.
+SPOT-028,gemini-3.5-flash-lite,False,0.98,account_access,account_access,true,true,Device-specific login error correctly flagged as account access issue.
+SPOT-029,gemini-3.5-flash-lite,False,0.94,other,other,true,true,Incomplete context handled correctly via escalation.
+SPOT-030,gemini-3.5-flash-lite,False,0.98,account_access,account_access,true,true,Account security and session management properly escalated.
+SPOT-031,gemini-3.5-flash-lite,False,1.0,product_feedback,product_feedback,false,false,Draft label is accurate and complete.
+SPOT-032,gemini-3.5-flash-lite,False,1.0,billing_subscription,billing_subscription,true,true,Draft label is correct and handles billing policy safely.
+SPOT-033,gemini-3.5-flash-lite,False,1.0,other,other,true,true,Draft label appropriately identifies missing context.
+SPOT-034,gemini-3.5-flash-lite,False,1.0,other,other,false,false,Draft label is accurate for a resolved query.
+SPOT-035,gemini-3.5-flash-lite,False,1.0,billing_subscription,billing_subscription,true,true,Draft label is correct for a payment issue.
+SPOT-036,gemini-3.5-flash-lite,False,1.0,other,other,false,false,Draft label correctly manages regional inquiries.
+SPOT-037,gemini-3.5-flash-lite,False,1.0,product_feedback,product_feedback,false,false,Draft label correctly classifies feature request.
+SPOT-038,gemini-3.5-flash-lite,False,1.0,billing_subscription,billing_subscription,true,true,Draft label accurately identifies billing channel.
+SPOT-039,gemini-3.5-flash-lite,False,1.0,playback_technical,playback_technical,false,false,Draft label correctly identifies technical status inquiry.
+SPOT-040,gemini-3.5-flash-lite,False,1.0,billing_subscription,billing_subscription,true,true,Draft label handles billing and accessibility/security well.
+SPOT-041,gemini-3.5-flash-lite,True,1.0,account_access,account_access,true,true,Correctly labeled intent and security escalation for disabled account.
+SPOT-042,gemini-3.5-flash-lite,True,1.0,playback_technical,playback_technical,true,true,Accurate technical classification and missing context escalation.
+SPOT-043,gemini-3.5-flash-lite,True,1.0,product_feedback,product_feedback,false,false,Properly categorized as product feedback with no escalation needed.
+SPOT-044,gemini-3.5-flash-lite,True,1.0,other,other,false,false,Correctly identified as positive praise under 'other' intent.
+SPOT-045,gemini-3.5-flash-lite,True,1.0,content_catalog,content_catalog,false,false,Accurate catalog intent; profanity does not require escalation here.
+SPOT-046,gemini-3.5-flash-lite,True,1.0,playback_technical,playback_technical,true,true,Valid technical intent with missing context escalation for vague issue.
+SPOT-047,gemini-3.5-flash-lite,True,1.0,billing_subscription,billing_subscription,true,true,Correct billing intent and escalation for multi-charge issue.
+SPOT-048,gemini-3.5-flash-lite,True,1.0,product_feedback,product_feedback,false,false,Accurate product feedback label despite abusive phrasing.
+SPOT-049,gemini-3.5-flash-lite,True,1.0,content_catalog,content_catalog,false,false,Proper catalog request labeling.
+SPOT-050,gemini-3.5-flash-lite,True,1.0,account_access,account_access,true,true,Accurate account access intent and account/security escalation.
+SPOT-051,gemini-3.5-flash-lite,False,1.0,content_catalog,content_catalog,false,false,Accurate intent and escalation settings. Correctly handles availability query without escalation.
+SPOT-052,gemini-3.5-flash-lite,False,1.0,billing_subscription,billing_subscription,true,true,Valid billing escalation for subscription reversion issues requiring private investigation.
+SPOT-053,gemini-3.5-flash-lite,False,1.0,billing_subscription,billing_subscription,true,true,Correct billing intent and escalation due to financial dispute and charge discrepancy.
+SPOT-054,gemini-3.5-flash-lite,False,1.0,product_feedback,product_feedback,false,false,Valid product feedback feature request handled without escalation.
+SPOT-055,gemini-3.5-flash-lite,False,1.0,billing_subscription,billing_subscription,true,true,Correctly escalated for duplicate charges and third-party carrier payment verification.
+SPOT-056,gemini-3.5-flash-lite,False,1.0,playlist_library,playlist_library,false,false,Proper playlist/library app behavior query without need for escalation.
+SPOT-057,gemini-3.5-flash-lite,False,1.0,device_connectivity,device_connectivity,false,false,Accurate device connectivity intent and appropriate non-escalation.
+SPOT-058,gemini-3.5-flash-lite,False,1.0,playlist_library,playlist_library,true,true,Correctly escalated due to critical missing context regarding sudden library disappearance.
+SPOT-059,gemini-3.5-flash-lite,False,1.0,billing_subscription,billing_subscription,true,true,Proper billing classification and escalation for postpaid carrier payment inquiries.
+SPOT-060,gemini-3.5-flash-lite,False,1.0,content_catalog,content_catalog,false,false,Accurate catalog intent and safe non-escalated response guidelines.
+SPOT-061,gemini-3.5-flash-lite,True,0.95,billing_subscription,billing_subscription,true,true,Correctly categorized as billing/subscription due to Premium offer UI issue. Valid escalation for billing.
+SPOT-062,gemini-3.5-flash-lite,True,0.98,content_catalog,content_catalog,false,false,Accurately labeled content catalog intent with no escalation needed.
+SPOT-063,gemini-3.5-flash-lite,True,0.95,product_feedback,product_feedback,false,false,Product feedback for seasonal category curation. No escalation required.
+SPOT-064,gemini-3.5-flash-lite,True,0.92,content_catalog,content_catalog,true,true,Catalog error requiring content team escalation and missing specific track context.
+SPOT-065,gemini-3.5-flash-lite,True,0.95,playback_technical,playback_technical,true,true,"Playback technical issue post-update, escalated due to missing device context."
+SPOT-066,gemini-3.5-flash-lite,True,0.96,playback_technical,playback_technical,false,false,"Standard technical troubleshooting query, no escalation needed."
+SPOT-067,gemini-3.5-flash-lite,True,0.97,other,other,true,true,"General inquiry about phone support, escalated due to missing context on account issue."
+SPOT-068,gemini-3.5-flash-lite,True,0.9,other,other,true,true,Unclear greeting requiring more context.
+SPOT-069,gemini-3.5-flash-lite,True,0.91,playback_technical,playback_technical,true,true,"Ambiguous Swedish tweet regarding potential outage, escalated for missing context."
+SPOT-070,gemini-3.5-flash-lite,True,0.95,billing_subscription,billing_subscription,true,true,Billing and server error issue requiring secure escalation.
+SPOT-071,gemini-3.5-flash-lite,False,1.0,content_catalog,content_catalog,false,false,Draft is accurate and correctly categorized under content catalog.
+SPOT-072,gemini-3.5-flash-lite,True,0.9,playback_technical,playback_technical,true,false,Escalation to missing_context is unnecessary since routine troubleshooting questions suffice.
+SPOT-073,gemini-3.5-flash-lite,True,0.9,billing_subscription,billing_subscription,true,false,Routine billing query; escalation is not required as it's standard subscription info.
+SPOT-074,gemini-3.5-flash-lite,True,1.0,product_feedback,product_feedback,false,false,Draft handles product feedback and feature requests correctly.
+SPOT-075,gemini-3.5-flash-lite,False,1.0,other,other,false,false,Draft is correct for praise and general statements.
+SPOT-076,gemini-3.5-flash-lite,True,1.0,account_access,account_access,true,true,Security/account compromise requires proper escalation.
+SPOT-077,gemini-3.5-flash-lite,True,1.0,playback_technical,playback_technical,false,false,Draft is appropriate for technical troubleshooting.
+SPOT-078,gemini-3.5-flash-lite,True,1.0,playback_technical,playback_technical,false,false,Continues troubleshooting flow accurately.
+SPOT-079,gemini-3.5-flash-lite,True,1.0,billing_subscription,billing_subscription,true,true,Billing overlap issues require secure support escalation.
+SPOT-080,gemini-3.5-flash-lite,True,1.0,playback_technical,playback_technical,false,false,Draft is correct for a temporary playback issue complaint.
+SPOT-081,gemini-3.5-flash-lite,True,0.95,billing_subscription,billing_subscription,true,true,Accurate assessment of billing issue and privacy risks.
+SPOT-082,gemini-3.5-flash-lite,True,0.95,account_access,account_access,true,true,Properly identifies account security and login flow issues.
+SPOT-083,gemini-3.5-flash-lite,True,0.98,product_feedback,product_feedback,false,false,"Valid product feedback, correctly handled without escalation."
+SPOT-084,gemini-3.5-flash-lite,True,0.98,product_feedback,product_feedback,false,false,Appropriate handling of market expansion request.
+SPOT-085,gemini-3.5-flash-lite,True,0.9,playback_technical,playback_technical,true,true,Correctly flagged for missing context regarding UK playback issues.
+SPOT-086,gemini-3.5-flash-lite,True,0.9,account_access,account_access,true,true,Correctly identifies ambiguous registration query.
+SPOT-087,gemini-3.5-flash-lite,True,0.9,billing_subscription,billing_subscription,true,true,Missing context on which promotion the user means.
+SPOT-088,gemini-3.5-flash-lite,True,0.95,billing_subscription,billing_subscription,true,true,Valid escalation for student verification/renewal error.
+SPOT-089,gemini-3.5-flash-lite,True,0.98,product_feedback,product_feedback,false,false,Praise and feature feedback handled appropriately.
+SPOT-090,gemini-3.5-flash-lite,True,0.95,playback_technical,playback_technical,false,false,"Context provided, technical troubleshooting given safely."
+SPOT-091,gemini-3.5-flash-lite,True,0.95,billing_subscription,billing_subscription,true,true,Accurate billing intent and secure escalation due to payment method queries.
+SPOT-092,gemini-3.5-flash-lite,True,0.9,other,other,true,true,Escalated correctly due to missing context and unclear message.
+SPOT-093,gemini-3.5-flash-lite,True,0.95,playback_technical,playback_technical,false,false,"Clear technical playback troubleshooting, no escalation needed."
+SPOT-094,gemini-3.5-flash-lite,True,0.9,billing_subscription,billing_subscription,true,true,Billing query needing secure escalation regarding recurring payments.
+SPOT-095,gemini-3.5-flash-lite,True,0.95,product_feedback,product_feedback,false,false,Standard product feedback and feature request response.
+SPOT-096,gemini-3.5-flash-lite,True,0.9,playlist_library,playlist_library,true,true,Escalated for missing context on playlist shuffle behavior.
+SPOT-097,gemini-3.5-flash-lite,True,0.98,account_access,account_access,true,true,Account access issue requiring secure support routing.
+SPOT-098,gemini-3.5-flash-lite,True,0.92,billing_subscription,billing_subscription,true,true,Billing and plan eligibility dispute requiring escalation.
+SPOT-099,gemini-3.5-flash-lite,True,0.99,other,other,false,false,"Positive interaction conclusion, no escalation needed."
+SPOT-100,gemini-3.5-flash-lite,True,0.95,billing_subscription,billing_subscription,true,true,Billing cycle inquiry requiring secure support route.
+SPOT-101,gemini-3.5-flash-lite,False,0.95,other,other,true,true,Draft label is sound; escalation is required due to missing context and urgency.
+SPOT-102,gemini-3.5-flash-lite,False,0.95,playlist_library,playlist_library,true,true,Accurate intent and escalation reason given missing context and user frustration.
+SPOT-103,gemini-3.5-flash-lite,False,0.95,other,other,true,true,Valid review; link context requires safe handling and escalation for missing details.
+SPOT-104,gemini-3.5-flash-lite,False,0.95,other,other,true,true,Draft label correctly identifies need for human routing and private channel management.
+SPOT-105,gemini-3.5-flash-lite,False,0.95,content_catalog,content_catalog,false,false,Correctly classified as catalog feedback with no escalation needed.
+SPOT-106,gemini-3.5-flash-lite,False,0.98,account_access,account_access,true,true,Account security and authentication issue correctly triggers escalation.
+SPOT-107,gemini-3.5-flash-lite,False,0.98,billing_subscription,billing_subscription,true,true,Billing and cancellation failure correctly escalates under billing_or_refund.
+SPOT-108,gemini-3.5-flash-lite,False,0.95,playlist_library,playlist_library,true,true,Proper intent and escalation due to ambiguous library/download state.
+SPOT-109,gemini-3.5-flash-lite,False,0.95,product_feedback,product_feedback,false,false,Product feedback handled correctly without requiring escalation.
+SPOT-110,gemini-3.5-flash-lite,False,0.98,billing_subscription,billing_subscription,true,true,Billing trial duration issue properly routed to billing escalation.
+SPOT-111,gemini-3.5-flash-lite,False,1.0,account_access,account_access,true,true,Accurate escalation for login and password recovery issues.
+SPOT-112,gemini-3.5-flash-lite,False,1.0,content_catalog,content_catalog,false,false,Catalog request correctly handled without escalation.
+SPOT-113,gemini-3.5-flash-lite,True,0.95,other,playback_technical,true,true,Intent corrected to playback_technical; missing context requires escalation.
+SPOT-114,gemini-3.5-flash-lite,False,1.0,playlist_library,playlist_library,false,false,Valid playlist and library feedback.
+SPOT-115,gemini-3.5-flash-lite,False,1.0,content_catalog,content_catalog,false,false,Content catalog query properly handled without escalation.
+SPOT-116,gemini-3.5-flash-lite,False,0.95,playback_technical,playback_technical,true,true,General app failure with missing device and network context.
+SPOT-117,gemini-3.5-flash-lite,False,1.0,billing_subscription,billing_subscription,true,true,Billing escalation required for payment issues.
+SPOT-118,gemini-3.5-flash-lite,False,1.0,billing_subscription,billing_subscription,true,true,Valid billing and payment status escalation.
+SPOT-119,gemini-3.5-flash-lite,False,1.0,content_catalog,content_catalog,false,false,Content request appropriately managed without escalation.
+SPOT-120,gemini-3.5-flash-lite,False,1.0,billing_subscription,billing_subscription,true,true,Billing subscription and card update query requiring secure routing.
+SPOT-121,gemini-3.5-flash-lite,False,1.0,content_catalog,content_catalog,false,false,Accurate catalog categorization and appropriate escalation settings.
+SPOT-122,gemini-3.5-flash-lite,False,1.0,device_connectivity,device_connectivity,false,false,Correctly labeled as device connectivity with no escalation needed.
+SPOT-123,gemini-3.5-flash-lite,False,1.0,other,other,true,true,Properly escalated due to missing context regarding DM contents.
+SPOT-124,gemini-3.5-flash-lite,False,1.0,content_catalog,content_catalog,false,false,Catalog categorization is correct and no escalation is required.
+SPOT-125,gemini-3.5-flash-lite,False,1.0,billing_subscription,billing_subscription,true,true,Accurately identified as a billing issue requiring secure escalation.
+SPOT-126,gemini-3.5-flash-lite,False,1.0,account_access,account_access,true,true,Account access issue with a CSRF error correctly demands secure escalation.
+SPOT-127,gemini-3.5-flash-lite,False,1.0,playlist_library,playlist_library,false,false,Playlist library correctly labeled with no escalation warranted.
+SPOT-128,gemini-3.5-flash-lite,False,1.0,device_connectivity,device_connectivity,true,true,Correctly flagged for escalation due to ambiguous unlinking context after renewal.
+SPOT-129,gemini-3.5-flash-lite,False,1.0,other,other,true,true,Corporate history query appropriately routed to press/corporate via escalation.
+SPOT-130,gemini-3.5-flash-lite,False,1.0,content_catalog,content_catalog,false,false,Accurately categorized as content/catalog feature question without requiring escalation.
+SPOT-131,gemini-3.5-flash-lite,False,1.0,other,other,false,false,Accurate draft labels; valid closing message.
+SPOT-132,gemini-3.5-flash-lite,False,1.0,billing_subscription,billing_subscription,true,true,Properly escalated due to billing/unauthorized charges.
+SPOT-133,gemini-3.5-flash-lite,False,0.9,other,other,true,true,Escalated for missing context on persistent recurring failure.
+SPOT-134,gemini-3.5-flash-lite,False,1.0,billing_subscription,billing_subscription,true,true,Valid escalation for account recovery and minor-related trial issues.
+SPOT-135,gemini-3.5-flash-lite,False,1.0,playback_technical,playback_technical,false,false,Correct technical support categorization.
+SPOT-136,gemini-3.5-flash-lite,False,1.0,content_catalog,content_catalog,false,false,Accurate local files / content catalog intent.
+SPOT-137,gemini-3.5-flash-lite,False,1.0,product_feedback,product_feedback,false,false,Correct product feedback classification.
+SPOT-138,gemini-3.5-flash-lite,False,0.95,billing_subscription,billing_subscription,true,true,Escalated for billing/promotional pricing inquiry requiring secure verification.
+SPOT-139,gemini-3.5-flash-lite,False,1.0,account_access,account_access,true,true,Proper security escalation for suspected account takeover.
+SPOT-140,gemini-3.5-flash-lite,False,1.0,other,other,false,false,Appropriate intent and non-escalated status for resolved banter.
+SPOT-141,gemini-3.5-flash-lite,False,0.95,billing_subscription,billing_subscription,true,true,Accurate intent and escalation due to billing/redemption nature.
+SPOT-142,gemini-3.5-flash-lite,False,0.95,product_feedback,product_feedback,false,false,Correct categorization of UI preference feedback.
+SPOT-143,gemini-3.5-flash-lite,False,0.95,billing_subscription,billing_subscription,true,true,Correctly handled billing/payment issue requiring secure routing.
+SPOT-144,gemini-3.5-flash-lite,False,0.9,other,other,true,true,Properly escalated due to insufficient context from isolated link.
+SPOT-145,gemini-3.5-flash-lite,False,0.95,product_feedback,product_feedback,false,false,Valid product feedback on library limits.
+SPOT-146,gemini-3.5-flash-lite,False,0.95,playback_technical,playback_technical,false,false,Accurate technical playback classification.
+SPOT-147,gemini-3.5-flash-lite,False,0.9,other,other,true,true,Escalated correctly due to ambiguous missing device context.
+SPOT-148,gemini-3.5-flash-lite,False,0.95,playback_technical,playback_technical,false,false,Proper technical resource-usage issue.
+SPOT-149,gemini-3.5-flash-lite,False,0.98,billing_subscription,billing_subscription,true,true,Correctly escalated due to PII/transaction screenshots.
+SPOT-150,gemini-3.5-flash-lite,False,0.95,product_feedback,product_feedback,false,false,Valid product feedback regarding ad targeting.
+SPOT-151,gemini-3.5-flash-lite,False,0.95,billing_subscription,billing_subscription,true,true,Correctly categorized as billing with escalation due to account-specific payment status.
+SPOT-152,gemini-3.5-flash-lite,False,0.98,billing_subscription,billing_subscription,true,true,Clear billing dispute requiring secure handling.
+SPOT-153,gemini-3.5-flash-lite,False,0.92,billing_subscription,billing_subscription,false,false,"General promotional inquiry, no escalation needed."
+SPOT-154,gemini-3.5-flash-lite,False,0.94,billing_subscription,billing_subscription,true,true,Subscription transition requires account-level billing review.
+SPOT-155,gemini-3.5-flash-lite,False,0.95,billing_subscription,billing_subscription,true,true,Duplicate account billing question requiring escalation.
+SPOT-156,gemini-3.5-flash-lite,False,0.93,billing_subscription,billing_subscription,false,false,Standard payment method question for promos.
+SPOT-157,gemini-3.5-flash-lite,False,0.96,billing_subscription,billing_subscription,true,true,Checkout failure requires secure assistance.
+SPOT-158,gemini-3.5-flash-lite,False,0.92,billing_subscription,billing_subscription,false,false,General payment method query for promotions.
+SPOT-159,gemini-3.5-flash-lite,False,0.99,account_access,account_access,true,true,Account access issue requiring secure escalation.
+SPOT-160,gemini-3.5-flash-lite,False,0.98,account_access,account_access,true,true,Complex account locking/conflict issue requiring secure support.
+SPOT-161,gemini-3.5-flash-lite,True,0.95,account_access,account_access,true,true,Correctly identified account access issue needing secure escalation.
+SPOT-162,gemini-3.5-flash-lite,True,0.98,account_access,account_access,true,true,Escalation justified due to public email placeholders.
+SPOT-163,gemini-3.5-flash-lite,True,0.99,account_access,account_access,true,true,Clear account compromise requiring secure support.
+SPOT-164,gemini-3.5-flash-lite,True,0.99,account_access,account_access,true,true,Valid escalation for repeated hacking and exposed ID link.
+SPOT-165,gemini-3.5-flash-lite,True,0.95,product_feedback,product_feedback,false,false,Figurative language handled as standard product feedback.
+SPOT-166,gemini-3.5-flash-lite,True,0.94,product_feedback,product_feedback,false,false,Accurately categorized as general product feedback.
+SPOT-167,gemini-3.5-flash-lite,True,1.0,playlist_library,playlist_library,true,true,Mandatory safety escalation due to explicit self-harm threat.
+SPOT-168,gemini-3.5-flash-lite,True,0.92,account_access,account_access,true,true,Legal/policy mention appropriately triggers escalation.
+SPOT-169,gemini-3.5-flash-lite,True,0.98,other,other,false,false,Simple enthusiastic post correctly classified as other.
+SPOT-170,gemini-3.5-flash-lite,True,0.97,other,other,false,false,Follow-up interaction correctly handled as other.
+SPOT-171,gemini-3.5-flash-lite,False,0.95,account_access,account_access,true,true,Registration issue needs account security handling.
+SPOT-172,gemini-3.5-flash-lite,False,0.9,other,other,true,true,Extremely unclear message requires context.
+SPOT-173,gemini-3.5-flash-lite,False,0.9,other,other,true,true,Missing context on what DM inquiry relates to.
+SPOT-174,gemini-3.5-flash-lite,False,0.9,other,other,true,true,Slang phrase 'stole my mani' has missing context.
+SPOT-175,gemini-3.5-flash-lite,False,0.95,other,other,false,false,"Simple thank you, safe to close publicly."
+SPOT-176,gemini-3.5-flash-lite,False,0.9,other,other,true,true,Urgent request with zero context.
+SPOT-177,gemini-3.5-flash-lite,False,0.9,other,other,true,true,Follow-up for response with hidden context.
+SPOT-178,gemini-3.5-flash-lite,False,0.95,other,other,false,false,"Standard continuation in DM, no escalation needed."
+SPOT-179,gemini-3.5-flash-lite,False,0.9,other,other,true,true,General DM request without prior context.
+SPOT-180,gemini-3.5-flash-lite,False,0.95,product_feedback,product_feedback,false,false,Standard product feedback about promotions.
+SPOT-181,gemini-3.5-flash-lite,False,1.0,account_access,account_access,true,true,Accurate assessment of account compromise and security escalation.
+SPOT-182,gemini-3.5-flash-lite,False,1.0,playback_technical,playback_technical,false,false,Correctly labeled as a technical playback issue with no escalation needed.
+SPOT-183,gemini-3.5-flash-lite,False,0.9,billing_subscription,billing_subscription,true,true,Low confidence due to ambiguous currency and shorthand pricing.
+SPOT-184,gemini-3.5-flash-lite,True,0.95,other,playback_technical,true,true,"Device info provided, but the original issue is missing, requiring escalation."
+SPOT-185,gemini-3.5-flash-lite,False,0.9,playback_technical,playback_technical,true,true,Missing context on the root problem after reinstall failure.
+SPOT-186,gemini-3.5-flash-lite,False,0.95,other,other,true,true,Customer refuses DM without context; needs secure handling.
+SPOT-187,gemini-3.5-flash-lite,False,1.0,other,other,true,true,User states they DM'ed; requires routing to private support queue.
+SPOT-188,gemini-3.5-flash-lite,False,0.9,device_connectivity,device_connectivity,true,true,Integration/hardware issues require verification and careful escalation.
+SPOT-189,gemini-3.5-flash-lite,False,1.0,billing_subscription,billing_subscription,true,true,Billing inquiry involving a charge requires secure escalation.
+SPOT-190,gemini-3.5-flash-lite,False,1.0,other,other,true,true,Requesting attention on DM; context is confined to private channel.
+SPOT-191,gemini-3.5-flash-lite,False,0.95,billing_subscription,billing_subscription,true,true,Correctly labeled billing issue requiring secure DM support.
+SPOT-192,gemini-3.5-flash-lite,False,0.9,other,other,true,true,Vague complaint requires escalation for missing context.
+SPOT-193,gemini-3.5-flash-lite,False,1.0,other,other,false,false,"Simple praise message, no escalation needed."
+SPOT-194,gemini-3.5-flash-lite,False,0.9,other,other,true,true,Customer complaining about response time in DMs.
+SPOT-195,gemini-3.5-flash-lite,False,0.95,product_feedback,product_feedback,false,false,Feature request for playlists.
+SPOT-196,gemini-3.5-flash-lite,False,0.95,content_catalog,content_catalog,false,false,Catalog request for a specific song.
+SPOT-197,gemini-3.5-flash-lite,False,0.95,product_feedback,product_feedback,false,false,Feature request for downloading Daily Mixes.
+SPOT-198,gemini-3.5-flash-lite,False,0.95,product_feedback,product_feedback,false,false,Positive UI feedback and request.
+SPOT-199,gemini-3.5-flash-lite,False,0.95,playback_technical,playback_technical,false,false,Technical errors with app search and home navigation.
+SPOT-200,gemini-3.5-flash-lite,False,0.85,playback_technical,playback_technical,true,true,Mentions app being down and needing downloads; warrants checking status.

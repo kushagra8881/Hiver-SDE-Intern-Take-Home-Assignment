@@ -1,0 +1,12 @@
+{
+  "rubric_version": "reply-rubric-v1",
+  "judge_model": "gemini-3.5-flash-lite",
+  "outputs": 120,
+  "judge_failures": 0,
+  "systems": {
+    "trivial": {"n": 40, "accept_rate": 0.25, "groundedness": 3.45, "actionability": 2.325, "tone": 3.05, "safety": 4.6},
+    "simple": {"n": 40, "accept_rate": 0.35, "groundedness": 2.575, "actionability": 2.55, "tone": 2.85, "safety": 3.175},
+    "main": {"n": 40, "accept_rate": 0.85, "groundedness": 3.55, "actionability": 3.325, "tone": 4.025, "safety": 4.75}
+  },
+  "warning": "LLM-judge scores are not a substitute for the still-pending blinded human ratings."
+}

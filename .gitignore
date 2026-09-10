@@ -10,5 +10,5 @@ data/raw/
 data/processed/
 artifacts/*
 !artifacts/.gitkeep
-results/live_*.json
-results/live_*.csv
+# Frozen live evaluation artifacts are committed for reproducibility. Ad-hoc variants
+# should use a different ignored filename or be cleaned before committing.

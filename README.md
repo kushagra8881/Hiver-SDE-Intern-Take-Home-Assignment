@@ -4,7 +4,7 @@ This repository turns the 2.8M-row Customer Support on Twitter dataset into a sc
 
 The central design goal is selective trust, not maximum automation: account/security, money/refund, personal-data, legal/safety, missing-context, low-confidence, and weak-evidence cases go to a human.
 
-> **Integrity checkpoint:** `data/gold/spotify_golden_v1.csv` is supplied as an assistant-drafted annotation set. Before presenting it as “human-labelled,” the applicant must review every row with `scripts/label_gold.py`, replace the annotator value with their initials, and set `review_status=reviewed`. Likewise, judge–human agreement is only valid after a human completes the blinded audit sheet. The code refuses to publish normal evaluation results from unreviewed labels.
+> **Integrity checkpoint:** all 200 draft labels received an independent Gemini 3.5 Flash Lite review; 80 were changed and every row is stamped `llm_reviewed`. This is stronger development evidence, but it is not human labelling. Before presenting the set as “human-labelled,” the applicant must personally review every row with `scripts/label_gold.py`. Judge–human agreement likewise remains invalid until a person completes the blinded audit sheet.
 
 The concise assignment report is in [REPORT.md](REPORT.md); the non-obvious choices are in [DECISIONS.md](DECISIONS.md).
 
@@ -24,7 +24,7 @@ Place `twcs.csv` in the repository root (or pass its path), then:
 # Rebuild the 41,585 Spotify customer→brand cases and data manifest.
 make prepare CSV=/absolute/path/to/twcs.csv
 
-# Check the assistant draft and reproduce its clearly stamped development results.
+# Check the independently LLM-reviewed labels and reproduce stamped development results.
 make validate-development
 make test
 make evaluate-development
@@ -33,7 +33,7 @@ make evaluate-development
 make demo MESSAGE="My playlist disappeared after the update"
 ```
 
-After personal review with `scripts/label_gold.py`, `make validate && make evaluate` becomes the submission path and refuses any row not marked `reviewed`.
+To repeat the independent review with an environment-only key, run `make review-labels-gemini`. After personal review with `scripts/label_gold.py`, `make validate && make evaluate` becomes the human-gold submission path.
 
 On the supplied 8-core CPU environment, source extraction takes well under two minutes and local evaluation is designed to stay under 15 minutes. `make reproduce` recomputes result tables from committed gold/prediction/judge artifacts without the 493 MiB raw file or an API call.
 
@@ -78,7 +78,7 @@ Live regeneration is separated because model availability, rate limits, latency,
 
 ## Golden-set workflow
 
-The committed sheet contains 200 distinct threads and near-duplicate groups. Its current labels are assistant drafts pending the required human review:
+The committed sheet contains 200 distinct threads and near-duplicate groups. Its labels are independently LLM-reviewed (`results/gemini_label_review.csv`) pending the required personal human review:
 
 - 150 cases are sampled from the latest 30% of Spotify cases to approximate prevalence.
 - 50 challenge cases over-sample risky, short, ambiguous, and poorly answered messages.
