@@ -8,7 +8,25 @@ The central design goal is selective trust, not maximum automation: account/secu
 
 The concise assignment report is in [REPORT.md](REPORT.md); the non-obvious choices are in [DECISIONS.md](DECISIONS.md).
 
-## Quick start
+## Reproduce the headline results in under 15 minutes
+
+This path uses only committed artifacts: it does **not** need `twcs.csv` or a Gemini key. A clean-clone verification on the development machine completed `make reproduce` in 4.53 seconds (dependency download time depends on the network).
+
+```bash
+git clone https://github.com/kushagra8881/Hiver-SDE-Intern-Take-Home-Assignment.git
+cd Hiver-SDE-Intern-Take-Home-Assignment
+
+python -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python -m pip install -e . --no-deps
+
+make reproduce
+make test
+```
+
+Expected headline output for the main system: intent accuracy `0.710`, macro-F1 `0.633`, escalation recall `1.000`, auto coverage `0.200`, and unsafe-auto rate `0.000`. The frozen Gemini judge accepted 85% of the main replies, compared with 35% simple and 25% trivial. `results/judge_agreement.json` deliberately reports `insufficient_human_ratings` until the blinded sheet is rated by a person.
+
+## Rebuild and run the full pipeline
 
 Python 3.10+ is required. The raw Kaggle file is intentionally ignored by Git.
 
@@ -24,7 +42,7 @@ Place `twcs.csv` in the repository root (or pass its path), then:
 # Rebuild the 41,585 Spotify customer→brand cases and data manifest.
 make prepare CSV=/absolute/path/to/twcs.csv
 
-# Check the independently LLM-reviewed labels and reproduce stamped development results.
+# Check the independently LLM-reviewed labels and regenerate local system results.
 make validate-development
 make test
 make evaluate-development
@@ -32,6 +50,8 @@ make evaluate-development
 # Run one deterministic, no-network example.
 make demo MESSAGE="My playlist disappeared after the update"
 ```
+
+`make evaluate-development` also creates the ignored model/retrieval artifacts required by `make demo`. A fresh clone can always run `make reproduce` immediately; running the interactive agent requires `twcs.csv` plus the rebuild commands above.
 
 To repeat the independent review with an environment-only key, run `make review-labels-gemini`. After personal review with `scripts/label_gold.py`, `make validate && make evaluate` becomes the human-gold submission path.
 

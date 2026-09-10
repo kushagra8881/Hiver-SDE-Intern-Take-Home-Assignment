@@ -1,0 +1,6 @@
+{
+  "status": "insufficient_human_ratings",
+  "rated_holdout_outputs": 0,
+  "rated_calibration_outputs": 0,
+  "minimum": 20
+}
