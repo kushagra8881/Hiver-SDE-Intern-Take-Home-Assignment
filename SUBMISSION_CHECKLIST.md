@@ -15,5 +15,5 @@
 - [x] Run `make reproduce` and time it: 4.15 seconds on the development machine.
 - [x] Inspect the top five failure examples and ensure every quoted ID exists in the artifact.
 - [x] Initialise the Git repo; verify `twcs.csv`, `.env`, model files, and live secrets are not committed.
-- [ ] Add a GitHub remote and push the repository.
+- [x] Push `main` to `git@github.com:kushagra8881/Hiver-SDE-Intern-Take-Home-Assignment.git`.
 - [ ] Grant Hiver access if the repository is private and submit only through the Notion form.
